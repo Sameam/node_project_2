@@ -1,0 +1,44 @@
+<!-- views/register.hbs -->
+<body class="bk">
+  <div class="login-container">
+    <div class="container background opacity size">
+      <h2>Register to <a class="login" href="/">HSS</a></h2><br>
+      <p>Please follow the step and Enjoy our special course</p><br>
+      <form action="/register" method="post">
+        <p class="sign">
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" size="32" /><br>
+            <!-- Display validation errors for 'name' here -->
+        </p>
+        <p>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" size="32" /><br>
+            <!-- Display validation errors for 'email' here -->
+        </p>
+        <p>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" size="32" /><br>
+            {{#each errorMessages}}
+              <span style="color: red;">{{this}}</span>
+            {{/each}}
+        </p>
+        <p>
+            <label for="password2">Confirm Password</label><br>
+            <input type="password" id="password2" name="password2" size="32" /><br>
+            {{#each errorMessages}}
+              <span style="color: red;">{{this}}</span>
+            {{/each}}
+        </p>
+        <p>
+            <label for="phone">Phone number</label><br>
+            <input type="tel" id="phone" name="phone" size="32" /><br>
+            <!-- Display validation errors for 'telephone' here -->
+        </p>
+        <p class="btn"><button type="submit">Register</button></p>
+        <p class="note pull-right" ><a href="/login" style="color: black;">Already have an account? Login</a></p><br><br>
+      </form>   
+    </div>
+  </div>
+</body>
+
+

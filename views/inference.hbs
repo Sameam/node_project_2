@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{title}}</title>
+</head>
+<body>
+  <div class="breadcrumbs">
+    <div class="container">
+      <h2>What is Inferential Statistics?</h2>
+      <p>Inferential Statistics generally the technique that allow us to use statistics such as mean or sample standard deviation 
+        to make generalization about population from which the sample were drawn. With the help of inferential statistics, it helps statistician come 
+        to a conclusion and make a prediction based on the data. 
+      </p>
+    </div>
+  </div><!-- End Breadcrumbs -->
+  <div id="demo" class="carousel slide card" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/hypothesis.png" alt="hypothesis" width="1100" height="500">
+        <div class="carousel-caption d-none d-md-block color">
+            <p class="move">Hypothesis and prediction</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/testing.jpeg" alt="testing" width="1100" height="500">
+        <div class="carousel-caption d-none d-md-block color">
+            <p>Make an Inference</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/prediction.png" alt="prediction" width="1100" height="90">
+      </div>
+    </div>
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>          
+  </div> 
+<main id="main">
+  <!-- =======  tab bar for sub section ======= -->
+  <div class="container">
+      <ul class="nav nav-tabs sticky-top row d-flex">
+        <li class="nav-item col-3" data-aos="zoom-in">
+          <a class="nav-link active show" data-bs-toggle="tab" href="#inferential">
+            <h4 class="navigation">Inferential Statistics</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3" data-aos="zoom-in">
+          <a class="nav-link" data-bs-toggle="tab" href="#interval">
+            <h4 class="navigation">Confidence Interval</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
+          <a class="nav-link" data-bs-toggle="tab" href="#hypothesis">
+            <h4 class="navigation">Hypothesis testing</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
+          <a class="nav-link" data-bs-toggle="tab" href="#regression">
+            <h4 class="navigation">Regression testing</h4>
+          </a>
+        </li>
+      </ul>
+      <!-- =======  content for each tab section ======= -->
+      <div class="tab-content" data-aos="fade-up">
+        <div class="tab-pane active show" id="inferential">
+          <div class="row">
+            <div class="container">
+              <h2 id="infer">1. Inferential Statistics</h2>
+              <p>Most of the time, statistician can only get sample out of the big population because acquire the whole population is expensive, take very
+                long time and inefficient. While using descriptive statistics can help summarize the characteristics of dataset, 
+                inferential statistics can help us make a decision and prediction about the larger population. 
+              </p>
+              <p>For example: Inferential Statistics:
+                A statistician randomly select a sample of Computer Science in WA state, collect data on their final exam score and other features. 
+                In this case, we can used inferential statistic to make estimates and test hypothesis about the population of computer science in WA based on the sample.  
+              </p>
+              <h3>1.1 Sampling error</h3>
+              <p>
+                Since the sample size is smaller than population, this might create a sample error. Sampling error which is the difference between population values 
+                called (parameter) and called sample values called (statistics). 
+                <ul class="box">
+                  <li>A <b>statistic</b> is a measure that describes the sample (sample mean, sample standard deviation)</li>
+                  <li>A <b>population</b> is a measure that describe the whole population (population mean, population standard deviation)</li>
+                </ul>
+                Since in most cases, we do not know the real population parameter, we can used inferential statistics to estimate these parameter that will take the 
+                sampling error into account. There are two types of estimations that can be used to estimate about the population: point estimate and interval estimate. <br><br>
+                <ul class="box">
+                  <li>A <b>point estimate</b> is a single value estimate of parameter. For example, a sample mean is a point estimate of population mean</li>
+                  <li>An <b>interval estimate</b> provides a range of value that a value of parameter expected to lie. A confidence interval is an example of interval estimate</li>
+                </ul>
+              </p>
+              <h3>1.2 Point Estimate</h3>
+              <p>Point estimate involves the use of sample data to find the single value which is the best which is serve as the best estimate or best guess of unknown parameter. 
+                <ul class="box">
+                  <li>For <b>sample mean, median and mode</b>, the calculation is the same as population. </li>
+                  <li><b>Range</b> is also the same calculation as the population </li>
+                  <li>For <b>sample standard deviation</b>, the only different to population standard deviation is denominator. <br>
+                    For example, For example: Find the mean of the following dataset:
+                    56,35,45,67,12,24,48,55,58,30, mean= 43 <br><br>
+                    <math><mfrac>
+                      <mi> (56-43)<sup>2</sup> +(35-43)<sup>2</sup>+(45-43)<sup>2</sup>+(67-43)<sup>2</sup>+
+                        (12-43)<sup>2</sup>+(24-43)<sup>2</sup>+(48-43)<sup>2</sup>+(55-43)<sup>2</sup>+(58-43)<sup>2</sup>+(30-43)<sup>2</sup> </mi>
+                      <mi> (10-1) </mi></mfrac>
+                    </math>  <br>
+                    sample standard deviation = <br><br>
+                    <button onclick="sample()">Show Answer</button>
+                    <p id="sample"></p>
+                  </li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane show" id="interval">
+          <div class="row">
+            <div class="container">
+              <h2>2. Confidence Interval</h2>
+              <p class="inter"><b>Confidence interval</b> is used to estimate the range that a parameter could lie. It is useful estimate as it into account the 
+                sample error. <br>
+                While a point estimate give a precise value for each parameter, a confidence interval tells the uncertainty of the point estimate. 
+                They are both useful for using together. <br>
+                Each confidence interval associated with confidence level. A confidence level have the probability (or percentage) that containing the parameter 
+                estimate if you repeat the study again. <br>
+                Therefore, 95% confidence interval tells us that we keep repeat our study exactly the same way with a new sample 100 times,
+                you can expect your estimate to lie within the specified range of values 95 of the times.Although, we can say that 95% of the time, our estimate will 
+                lie between the range, you cannot say for sure that the actul parameter will. 
+                That’s because you can’t know the true value of the population parameter without collecting data from the full population.<br>
+                However, with random sampling and a suitable sample size, you can reasonably expect your confidence interval to contain the parameter a certain percentage of the time.
+              </p>
+              <p class="inter">
+                 For example, you want to know the average salary of computer science graduate students from UWA. After collecting survey responses from a ramdom sample, you calculate point estimate 
+                 and confidence interval. The sample salary of graduate student student is $56,000. 
+                 With random sampling, a 95% confidence interval of [$50,000 $12,000] means you can be reasonably confident that the average salary of UWA computer science graduate was between 
+                 $50,000 to $120,000
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane show" id="hypothesis">
+          <div class="row">
+            <div class="container">
+              <h2>3. Hypothesis testing </h2>
+              <p><b>Hypothesis</b> testing is a way for you to test on your experiments whether yoy have a meaningful result.
+                The goal of doing hypothesis testing is to compare population or assess relationship between variable using sample. <br>
+                Hypothesis testing or predicting are testing using statistical test. 
+              </p>
+              <p><b>Statistical</b> test can be parametrics and non parametrics. Parametrics test make assumptionincludes:
+                <ul class="box">
+                  <li>the population that the sample comes from follow a normal distribution. </li>
+                  <li>the sample size is large enough to represent the population. </li>
+                  <li>the variances, a measure of spread, of each group being compared to similar. </li>
+                </ul>
+              </p>
+              <p>Moreover, when your sample data is violated, non-parametrics tests are more suitable. There are many different statistical tests. 
+                Statistic test includes:
+                <ul>
+                  <li>t-test</li>
+                  <li>ANOVA</li>
+                </ul>
+              </p>
+              <div class="container">
+                <div class="table-responsive">
+                  <table class="table">
+                    <tr><th>Statistical Tests</th><th>Parametrics</th><th>What is being Compared?</th><th>Samples</th></tr>
+                    <tr><td>1-sample t-test</td><td>Yes</td><td>Mean</td><td>1-sample</td></tr>
+                    <tr><td>2-independence t-test</td><td>Yes</td><td>Mean</td><td>2-samples</td></tr>
+                    <tr><td>2-samples t-test</td><td>Yes</td><td>Mean</td><td>2-samples</td></tr>
+                    <tr><td>Paired t-test</td><td>Yes</td><td>Mean</td><td>2-samples</td></tr>
+                    <tr><td>ANOVA</td><td>Yes</td><td>Mean</td><td>More than 3 samples</td></tr>
+                  </table>
+                </div>
+              </div>
+              <h3>3.1 Hypothesis testing step</h3>
+              <p>In order to perform hypothesis testing, there are five main steps:</p>
+              <ol class="box">
+                <li>1. State the research hypothesis as null hypothesis H<sub>o</sub> and alternative Hypothesis H<sub>1</sub></li>
+                <li>2. Collect the data in a way to test the hypothesis</li>
+                <li>3. Perform an appropriate statistical test</li>
+                <li>4. Decide whether the null hypothesis is supported or refused according to p-value or crtical-test </li>
+                <li>5. Make a conclusion on the finding</li>
+              </ol>
+              <p class="inter"> For example: You want to test whether there is a relationship between gender and height<br>
+                <b>Step 1:</b> <br>
+                H<sub>0</sub>: male are not taller than women <br>
+                H<sub>1</sub>: male are not taller than women <br>
+                <b>Step 2:</b> <br>
+                To test differences in average height between men and women, your sample should have an equal proportion of men and women, 
+                and cover a variety of socio-economic classes and any other variables that might influence average height. <br>
+                <b>Step 3:</b> <br>
+                Based on the type of data you collected, you perform a one-tailed t-test to test whether men are in fact taller than women.<br>
+                Your t-test shows an average height of 175.4 cm for men and an average height of 161.7 cm for women, with an estimate of the true difference ranging from 10.2cm to infinity. 
+                The p-value is 0.002.<br>
+                <b>Step 4:</b> <br>
+                Assume in this case, the significant level is 0.05. <br>
+                In your analysis of the difference in average height between men and women, you find that the p-value of 0.002 is below your cutoff of 0.05, 
+                so you decide to reject your null hypothesis of no difference. <br>
+                <b>Step 5:</b> <br>
+                In our comparison of mean height between men and women we found an average difference of 14.3cm and a p-value of 0.002; therefore, we can refuse the null hypothesis that men are not taller than women and 
+                conclude that there is likely a difference in height between men and women.
+               </p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane show" id="regression">
+          <div class="row">
+            <div class="container">
+              <h2>4. Regression</h2>
+              <p>Regression Analysis is a set of statistical analysis used for estimate the relationship between dependent vriable (y)
+                and one or more independent variables (x). It can also be used for modelling and predicting future analysis. <br><br>
+                There are three main types of regression analysis: <br>
+                <ul class="box">
+                  <li><b>Single Linear Regression</b> is statistical study used for estimate and study the relationship between two continous variables. 
+                  One variable which is a dependent variable and another variable which is a indepdent variable. Formula can be written as: <br>
+                  <b>y = b<sub>0</sub> + x<sub>1</sub>b<sub>1</sub> + error term </b> <br><br>
+                  There are some assumption that need to make in order perform linear regression: <br><br>
+                  <ul class="box">
+                    <li>1. The dependent and independent variable show a linear relationship between the slope and the intercept </li>
+                    <li>2. The independent variable is not random</li>
+                    <li>3. The value of residual (error term) is zero</li>
+                    <li>4. The value of residual (error term) is constant across all observations</li>
+                    <li>5. The value of the residual (error term) is not correlated across all observations.</li>
+                    <li>6. The residual (error term) values follow the normal distribution.</li>
+                  </ul>
+                </li>
+                  <li><b>Multiple Linear Regression</b> is similar to linear regression and similar assumption. However, it has multiple independent variables. 
+                  and with one extra condition. <br><br>
+                  <ul>
+                    <li><b>Non_collinearity:</b> All independent variables should show a minimum correlation between each other. If the independent variables are highly correlated
+                      with each other, it will be hard to access the true relationship between independent variable and dependent variable. 
+                    </li>
+                  </ul>
+                  </li>
+                  <li><b>Non-linear Regression</b>: Some of the variables relationship that we have are not always going to be linear relationship, that why we will need a 
+                  non-linear relationship. This will add flexibility to the dataset and variables. However, how to fit the model and make prediction is out of the scope for this 
+                  course. 
+                  </li>
+                </ul>
+              </p>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </main>      
+</body>  
+</html>

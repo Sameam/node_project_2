@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{title}}</title>
+</head>
+<body>
+  <div class="breadcrumbs">
+    <div class="container">
+      <h1>{{capitalize name}} Information</h1>
+    </div>
+  </div>
+  <div class="container opacity size">
+    <form action="/admin/studentInfo" id="quizForm" method="post">
+      {{#each errorMessages}}
+        <span style="color: red;">{{this}}</span>
+      {{/each}}
+      <p class="sign">
+        <label for="id">ID</label><br>
+        <input type="id", id="id", name="id", size="32" value="{{users._id}}" readonly/><br>
+      </p>
+      <p class="sign">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" size="32" value="{{users.name}}"/><br>
+        <!-- Display validation errors for 'name' here -->
+      </p>
+      <p>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" size="32" value="{{users.email}}"/><br>
+        <!-- Display validation errors for 'email' here -->
+      </p>
+      <p>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" size="32" value=""/><br>
+      </p>
+      <p>
+        <label for="phone">Phone number</label><br>
+        <input type="tel" id="phone" name="phone" size="32" value="{{users.phone}}"/><br>
+      </p>
+      <p class="btn"><button type="submit"  id="deleteButton" formaction="/admin/deleteUser" onclick="return confirmDelete();">Delete</button></p>
+      <p class="btn"><button type="submit" id="updateButton">Update</button></p>
+    </form>
+  </div>
+  <script>
+    function confirmDelete() {
+      return confirm("Are you sure you want to delete this user?")
+    }
+  </script>
+</body>
+</html>

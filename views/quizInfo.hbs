@@ -1,0 +1,43 @@
+<body>
+  <div class="breadcrumbs">
+    <div class="container">
+      <h1>Welcome {{capitalize name}} to Admin Panel</h1>
+    </div>
+  </div>
+  <main id="main">
+    <div class="container">
+      <h1>{{capitalize name}} Admin</h1>
+      <h2>Quiz Information</h2>
+      <hr>
+      <table class="table users">
+        <thead>
+          <tr>
+            <th scope="col">Quiz_ID</th>
+            <th scope="col">Level</th>
+            <th scope="col">Quiz</th>
+            <th scope="col">Options</th>
+            <th scope="col">Answers</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each quizzes}}
+            <tr>
+              <td scope="row">
+                <a href="/admin/updateQuiz/{{this._id}}">{{this._id}}</a>
+              </td>
+              <td>{{this.level}}</td>
+              <td>{{{this.questions}}}</td> <!-- Use triple-stash for rendering HTML -->
+              <td>
+                {{#each this.options}}
+                <p>{{{this}}}</p>
+                {{/each}}
+              </td>
+              <td>{{{this.answer}}}</td> <!-- Use triple-stash for rendering HTML -->
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+

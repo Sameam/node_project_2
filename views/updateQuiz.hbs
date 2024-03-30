@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{title}}</title>
+</head>
+<body>
+  <div class="breadcrumbs">
+    <div class="container">
+      <h1>Welcome {{capitalize name}}</h1>
+    </div>
+  </div>
+  <div class="container size">
+    <form action="/admin/quizInfo" method="post">
+      {{#each errorMessages}}
+        <span style="color: red;">{{this}}</span>
+      {{/each}}
+      <p class="sign">
+        <label for="id">ID</label><br>
+        <input type="id", id="id", name="id", size="32" value="{{quiz._id}}" readonly/><br>
+      </p>
+      <p class="sign">
+        <label for="questions">Question</label><br>
+        <input type="text" id="questions" name="questions" size="32" value="{{quiz.questions}}"/><br>
+        <!-- Display validation errors for 'name' here -->
+      </p>
+      <p>
+        <label for="email">Options</label><br>
+        {{#each quiz.options}}
+          <input type="text" id="options" name="options[]" size="32" value="{{{this}}}"/><br>
+        {{/each}}
+      </p>
+      <p>
+        <label for="answer">answer</label><br>
+        <input type="text" id="answer" name="answer" size="32" value="{{{quiz.answer}}}"/><br>
+      </p>
+      <p>
+        <label for="level">answer</label><br>
+        <input type="text" id="level" name="level" size="32" value="{{quiz.level}}"/><br>
+      </p>
+      <p class="btn"><button type="submit" formaction="/admin/deleteQuiz" onclick="return confirmDelete();">Delete</button></p>
+      <p class="btn"><button type="submit">Update</button></p>
+    </form>
+  </div>
+  <script>
+    function confirmDelete() {
+      console.log("delete button")
+      return confirm("Are you sure you want to delete quiz?")
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<section id="score" class="score">
+  <div class="container tscore ad">
+    {{#if isAdminLogin}}
+      <h1>{{capitalize name}} Admin</h2>
+    {{/if}}
+    <h2>Table Score</h2>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">Score</th>
+          <th scope="col">Level</th>
+          <th scope="col">Total Questions</th>
+          <th scope="col">Correct Answer</th>
+          {{#if isAdminLogin}}
+            <th scope="col">Delete</th>
+            <th scope="col">Edit</th>
+          {{/if}}
+
+        </tr>
+      </thead>
+      <tbody>
+        {{#if isAdminLogin}}
+          {{#each users}}
+          <tr>
+              <th>{{this.name}}</th>
+              <th>{{this.date}}</th>
+              <th>{{this.score}}</th>
+              <th>{{this.level}}</th>
+              <th>{{this.totalQuestions}}</th>
+              <th>{{this.correctAnswers}}</th>
+              <td><button id="deleteButton" data-user-id="{{this._id}}" class="btn"><i class="fa fa-trash fa-lg"></i></button></td>
+              <td><a href="/renderUpdate/{{this._id}}"><i class="fa fa-pencil-square-o fa-lg"></i></a></td>
+          </tr>
+          {{/each}}
+        {{else}}
+          <tr>
+            <th>{{this.name}}</th>
+            <th>{{this.date}}</th>
+            <th>{{this.score}}</th>
+            <th>{{this.level}}</th>
+            <th>{{this.totalQuestions}}</th>
+            <th>{{this.correctAnswers}}</th>
+          </tr>
+        {{/if}}
+      </tbody>
+    </table>
+  </div>
+</section>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const deleteButtons = document.querySelectorAll('.btn'); // If you have multiple buttons, ensure they can be uniquely identified or use a class.
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const ID = this.getAttribute('data-user-id');
+            confirmDelete(ID);
+        });
+    });
+  });
+
+  async function confirmDelete(id) {
+      const isConfirmed = confirm("Are you sure you want to delete this user?");
+      if (isConfirmed) {
+        const response = await fetch(`/delete/?quizID=${id}`, { method: 'POST' });
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const result = await response.json();
+        console.log('User deleted successfully:', result);
+        // Refresh the page or redirect as needed.
+        window.location.reload();
+      }
+  }
+
+</script>

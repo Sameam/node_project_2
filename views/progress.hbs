@@ -1,0 +1,84 @@
+<section id="why-us " class="why-us">
+    <div class="container questions" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-4 d-flex align-items-stretch">
+          <div class="content">
+            <h3>Progress</h3>
+            <p>
+              Welcome {{capitalize name}} <br> 
+              {{#if levelsLeft}}
+                You have completed {{levelsCompletedCount}} out of 3 levels. <br>
+                {{#unless levelsCompleted.Beginner}}
+                  You still need to complete the Beginner level. <br>
+                {{/unless}}
+                {{#unless levelsCompleted.Intermediate}}
+                  You still need to complete the Intermediate level. <br>
+                {{/unless}}
+                {{#unless levelsCompleted.Advanced}}
+                  You still need to complete the Advanced level. <br>
+                {{/unless}}
+              {{else}}
+                Congratulations! You have completed all levels.
+              {{/if}}
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-boxes d-flex flex-column justify-content-center">
+            <div class="row">
+              <div class="col-xl-4 d-flex align-items-stretch">
+                <div class="icon-box mt-4 mt-xl-0">
+                  <i class="bx bx-receipt"></i>
+                  <h4>Level</h4>
+                  <p>
+                    {{#if levelsLeft}}
+                      {{#if levelsCompleted.Beginner}}
+                        {{ capitalize name }} Beginner level result quiz is
+                        {{users.score}} out of 10. 
+                      {{else}}
+                        {{ capitalize name }} need to complete Beginner level.
+                      {{/if}}
+                    {{/if}}
+                  </p>
+                </div>
+              </div>
+              <div class="col-xl-4 d-flex align-items-stretch">
+                <div class="icon-box mt-4 mt-xl-0">
+                  <i class="bx bx-cube-alt"></i>
+                  <h4>Level</h4>
+                  <p>
+                    {{#if levelsLeft}}
+                      {{#if levelsCompleted.Intermediate}}
+                        {{ name }} Intermediate level result quiz is
+                        {{users.score}} out of 10. 
+                      {{else}}
+                        {{ capitalize name }} need to complete Intermediate level.
+                      {{/if}}
+                    {{/if}}
+                  </p>
+                </div>
+              </div>
+              <div class="col-xl-4 d-flex align-items-stretch">
+                <div class="icon-box mt-4 mt-xl-0">
+                  <i class="bx bx-images"></i>
+                  <h4>Level</h4>
+                  <p>
+                    {{#if levelsLeft}}
+                      {{#if levelsCompleted.Advanced}}
+                        {{ name }} Advance level result quiz is
+                        {{users.score}} out of 10. 
+                      {{else}}
+                        {{ capitalize name }} need to complete Advance level.
+                      {{/if}}
+                    {{/if}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div><!-- End .content-->
+        </div>
+      </div>
+
+    </div>
+</section><!-- End Why Us Section -->

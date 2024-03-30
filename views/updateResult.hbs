@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{title}}</title>
+</head>
+<body>
+  <div class="breadcrumbs">
+    <div class="container">
+      <h1>{{capitalize name}} Information</h1>
+    </div>
+  </div>
+  <div class="container opacity size">
+    <form action="/update" id="quizForm" method="post">
+      {{#each errorMessages}}
+        <span style="color: red;">{{this}}</span>
+      {{/each}}
+      <p class="sign">
+        <label for="id">ID</label><br>
+        <input type="id", id="id", name="id", size="32" value="{{results._id}}" readonly/><br>
+      </p>
+      <p class="sign">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" size="32" value="{{results.name}}"/><br>
+        <!-- Display validation errors for 'name' here -->
+      </p>
+      <p>
+        <label for="score">Score</label><br>
+        <input type="score" id="score" name="score" size="32" value="{{results.score}}"/><br>
+        <!-- Display validation errors for 'email' here -->
+      </p>
+      <p>
+        <label for="level">Level</label><br>
+        <input type="level" id="level" name="level" size="32" value="{{results.level}}"/><br>
+      </p>
+      <p>
+        <label for="totalQuestions">Total Questions</label><br>
+        <input type="totalQuestions" id="totalQuestions" name="totalQuestions" size="32" value="{{results.totalQuestions}}"/><br>
+      </p>
+      <p>
+        <label for="correctAnswers">Correct Answers</label><br>
+        <input type="correctAnswers" id="correctAnswers" name="correctAnswers" size="32" value="{{results.correctAnswers}}"/><br>
+      </p>
+      <p class="btn"><button type="submit" id="updateButton">Update</button></p>
+    </form>
+  </div>
+</body>
+</html>

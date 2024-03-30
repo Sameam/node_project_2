@@ -1,0 +1,156 @@
+<!-- views/layouts/main.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{{ title }}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!--bootstrap-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'/>
+  <!-- Vendor CSS Files -->
+  <link href="/animate/bootstrap_animate/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/animate/bootstrap_animate/aos/aos.css" rel="stylesheet">
+  <link href="/animate/bootstrap_animate/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/animate/bootstrap_animate/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/animate/bootstrap_animate/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/animate/bootstrap_animate/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/animate/bootstrap_animate/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/css/main_style.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" type='text/css'/>
+
+   {{{styles}}}
+</head>
+<body>
+  {{#if showHeader}}
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <h1 class="logo me-auto"><a href="/">HSS</a></h1>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="/">Home</a></li>
+          {{#if userLoggedIn}}
+          <li class="dropdown"><a href="#"><span>Course</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/introduction">Introduction</a></li>
+              <li><a href="/content">Descriptive Statistics</a></li>
+              <li><a href="/inferential">Inferential Statistics</a></li>
+            </ul>
+          </li>
+          <li><a href="/quiz">Assessment</a></li>
+          <li><a href="/progress">Progress</a></li>
+          <li><a href="/result">Result</a></li>
+            {{#if isAdminLogin}}
+              <li><a href="/admin/studentInfo">Students Information</a></li>
+              <li><a href="/admin/quizInfo">Content Information</a></li>
+              <li><a href="/admin/register">Admin Signup</a></li>
+            {{/if}}
+          <li><a href="/logout">Logout</a></li>
+          {{else}}
+              <li><a href="/login">login</a></li>
+              <li><a href="/register">Signup</a></li>
+          {{/if}}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+  {{/if}}
+
+  {{{body}}}
+
+  {{#if showFooter}}
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>HSS</h3>
+            <p>
+              <strong>Phone:</strong> +61 490832804<br>
+              <strong>Email:</strong> 22805226@student.uwa.edu.au<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>HSS</span></strong>. All Rights Reserved
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="#" class="wechat"><i class="fa fa-weixin fa_5x"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  {{/if}}
+  <!-- Template Main JS File -->
+  <script src="/js/overall_main.js"></script>
+  <script src="/js/moment.js"></script>
+
+   <!-- Vendor JS Files -->
+  <script src="/animate/bootstrap_animate/aos/aos.js"></script>
+  <script src="/animate/bootstrap_animate/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/animate/bootstrap_animate/purecounter/purecounter.js"></script>
+  <script src="/animate/bootstrap_animate/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('#navbar a');
+      const currentUrl = window.location.pathname;
+
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentUrl) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+
+  {{{scripts}}} 
+</body>
+</html>

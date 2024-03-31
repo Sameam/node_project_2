@@ -2,8 +2,7 @@
 
 Requirements:
 
-Node_js 15.0+
-npm 
+- <b>Node.js</b>: Click [Here](https://nodejs.org/en/download/) to download node.js
 
 How to Start the Project:
 
@@ -15,36 +14,59 @@ Verify that you are inside the project 2 and can see app folder
 
 **Set up an .env files** 
 * This files is used to store all the important information. 
+* MONGO_URI="mongo_uri"
 
-python -m venv venv (In window)
-python3 -m venv venv (In mac/linux)
-After installing the venv, activate the venv using the following command
-source venv/bin/activate (In mac/linux)
-venv\Scripts\activate (In window)
-Install all the project requirment by entering the command
-pip install -r requirements.txt (In windows)
-pip3 install -r requirements.txt (In mac)
-sudo pip3 install -r requirments.txt (In Linux)
-There will need to be create a database first. To create a database:
-flask db init
-flask db migrate -m "name for the table"
-flask db upgrade
-To run the server type the command
-flask run
-Your Project will get start
+* SESSION_SECRET=SECRET_KEY
 
-It will give you the host address
-Copy the address and paste it into your any favorite Browser
-There are two panels inside the projects:
+### Server Configuration
+* PORT="port_number"
+* HOSTNAME="hostname"
 
-Admin
-User
+# Windows Setup Guide
+1. <b>Search 'Power Shell' in search box, and open the Power Shell. </b>
+2. cd .\Desktop\
+3. git clone git@github.com:Sameam/node_project_2.git
+4. npm install
+5. npm start **(This will start the web run on your Machine Local Host)**
+
+# MacOS Setup Guide
+1. <b>Hold 'command + space' and search for 'Terminal', and open the Terminal </b>
+2. cd ~/Desktop
+3. git clone git@github.com:Sameam/node_project_2.git
+4. npm install
+5. npm start **(This will start the web run on your Machine Local Host)**
+
+# Linux Setup Guide
+1. <b>Open the Terminal </b>
+2. cd ~/Desktop
+3. git clone git@github.com:Sameam/node_project_2.git
+4. cd my_resume
+
+**Step 4 and 5 is needed if you Linux system is not update with the newest package yet**
+
+
+4. sudo apt-get update
+5. sudo apt-get upgrade
+6. sudo apt install nodejs
+7. sudo apt install npm
+7. npm install
+8. npm start **(This will start the web run on your Machine Local Host)**
+
+# Future start after follow the step above 
+1. npm start
+
+
+AdminUser
 How To Create An Admin User
 
-Run The Command
----->python createSuperUser.py(In windows)
----->sudo python3 createSuperUser.py (In Linux)
----->python3 createSuperUser.py (In Mac) Enter the details asked by the Command Prompt It will create a new super user.
-How to run test cases. For testing, we first need to open init.py and change app.config.from_object(Config) to app.config.from_object('config.TestingConfig'). This will create a test.db which is a testing database.
+HOSTNAME/admin/register
+This will create a user but as an admin. 
+
+Login as Admin 
+HOSTNAME/admin/login
+This will login as admin. 
+
+
+
 
 

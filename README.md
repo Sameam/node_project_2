@@ -56,13 +56,13 @@ Verify that you are inside the project 2 and can see app folder
 1. npm start
 
 
-AdminUser
-How To Create An Admin User
+## AdminUser
+### How To Create An Admin User
 
 HOSTNAME/admin/register
 This will create a user but as an admin. 
 
-Login as Admin 
+### Login as Admin 
 HOSTNAME/admin/login
 This will login as admin. 
 
